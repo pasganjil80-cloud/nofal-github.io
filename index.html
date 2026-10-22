@@ -1,1 +1,464 @@
 
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GameCore - Toko komponen komputer, PC gaming, dan laptop gaming.">
+  <title>GameCore | Computer & Gaming Store</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAVIGASI -->
+  <header class="navbar">
+    <a href="#home" class="logo"><span>GAME</span>CORE<span class="dot">.</span></a>
+
+    <nav class="nav-links">
+      <a href="#home">Beranda</a>
+      <a href="#produk">Produk</a>
+      <a href="#kategori">Kategori</a>
+      <a href="#tentang">Tentang Kami</a>
+    </nav>
+
+    <a href="#keranjang" class="cart-button">
+      🛒 Keranjang <span id="cart-count">0</span>
+    </a>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <span class="eyebrow">⚡ YOUR ULTIMATE GAMING STORE</span>
+        <h1>LEVEL UP<br>YOUR <span>GAME.</span></h1>
+        <p>
+          Temukan komponen komputer, rakitan PC, dan laptop gaming
+          untuk pengalaman bermain serta produktivitas terbaik.
+        </p>
+        <div class="hero-actions">
+          <a href="#produk" class="btn btn-primary">Belanja Sekarang ↗</a>
+          <a href="#kategori" class="btn btn-outline">Jelajahi Kategori</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>PC</strong><span>Gaming</span></div>
+          <div><strong>PRO</strong><span>Components</span></div>
+          <div><strong>GEAR</strong><span>Gaming Setup</span></div>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img
+          src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?auto=format&fit=crop&w=1200&q=85"
+          alt="Komputer gaming dan setup meja komputer"
+        >
+        <div class="image-label">
+          <span class="status-dot"></span>
+          GAMING SETUP COLLECTION
+        </div>
+      </div>
+    </section>
+
+    <!-- KEUNGGULAN -->
+    <section class="benefits">
+      <div class="benefit"><span>🚚</span><div><strong>Pengiriman</strong><p>Informasi ongkir saat checkout</p></div></div>
+      <div class="benefit"><span>🛡️</span><div><strong>Belanja Aman</strong><p>Konfirmasi pesanan langsung</p></div></div>
+      <div class="benefit"><span>🎧</span><div><strong>Layanan Pelanggan</strong><p>Konsultasi produk via WhatsApp</p></div></div>
+      <div class="benefit"><span>💻</span><div><strong>Produk Gaming</strong><p>PC, laptop, dan komponen</p></div></div>
+    </section>
+
+    <!-- KATEGORI -->
+    <section class="section" id="kategori">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">PILIH KEBUTUHANMU</span>
+          <h2>Kategori <span>Produk</span></h2>
+        </div>
+        <p>Lengkapi setup gaming sesuai kebutuhanmu.</p>
+      </div>
+
+      <div class="category-grid">
+        <button class="category-card" data-category="PC Gaming">
+          <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=700&q=80" alt="PC gaming">
+          <span>01 / DESKTOP</span><h3>PC Gaming</h3><b>Jelajahi ↗</b>
+        </button>
+        <button class="category-card" data-category="Laptop Gaming">
+          <img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&w=700&q=80" alt="Laptop gaming">
+          <span>02 / PORTABLE</span><h3>Laptop Gaming</h3><b>Jelajahi ↗</b>
+        </button>
+        <button class="category-card" data-category="Komponen">
+          <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=700&q=80" alt="Komponen komputer">
+          <span>03 / HARDWARE</span><h3>Komponen PC</h3><b>Jelajahi ↗</b>
+        </button>
+        <button class="category-card" data-category="Aksesoris">
+          <img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=700&q=80" alt="Aksesoris gaming">
+          <span>04 / GAMING GEAR</span><h3>Aksesoris</h3><b>Jelajahi ↗</b>
+        </button>
+      </div>
+    </section>
+
+    <!-- PRODUK -->
+    <section class="section products-section" id="produk">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">PILIHAN UNTUK SETUP-MU</span>
+          <h2>Produk <span>Unggulan</span></h2>
+        </div>
+        <p>Pilih produk, masukkan ke keranjang, lalu pesan.</p>
+      </div>
+
+      <div class="product-tools">
+        <input id="search-input" type="search" placeholder="🔎 Cari laptop, VGA, RAM..." aria-label="Cari produk">
+
+        <select id="category-filter" aria-label="Filter kategori">
+          <option value="Semua">Semua Kategori</option>
+          <option value="PC Gaming">PC Gaming</option>
+          <option value="Laptop Gaming">Laptop Gaming</option>
+          <option value="Komponen">Komponen</option>
+          <option value="Aksesoris">Aksesoris</option>
+        </select>
+
+        <select id="sort-filter" aria-label="Urutkan produk">
+          <option value="default">Urutan Default</option>
+          <option value="low">Harga Terendah</option>
+          <option value="high">Harga Tertinggi</option>
+          <option value="name">Nama A–Z</option>
+        </select>
+      </div>
+
+      <div class="product-grid" id="product-grid">
+        <!-- Kartu produk dibuat otomatis oleh JavaScript -->
+      </div>
+      <p id="empty-message" class="empty-message" hidden>Produk tidak ditemukan. Coba kata kunci lain.</p>
+    </section>
+
+    <!-- KERANJANG -->
+    <section class="section cart-section" id="keranjang">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">PESANAN KAMU</span>
+          <h2>Keranjang <span>Belanja</span></h2>
+        </div>
+        <button class="clear-button" id="clear-cart">Kosongkan Keranjang</button>
+      </div>
+
+      <div class="cart-layout">
+        <div class="cart-items" id="cart-items">
+          <p class="empty-cart">Keranjang masih kosong. Yuk, pilih produk gaming!</p>
+        </div>
+
+        <aside class="cart-summary">
+          <h3>Ringkasan Belanja</h3>
+          <div class="summary-line"><span>Jumlah barang</span><strong id="summary-qty">0</strong></div>
+          <div class="summary-line"><span>Subtotal</span><strong id="summary-total">Rp0</strong></div>
+          <p class="shipping-note">Ongkir dan ketersediaan barang dikonfirmasi oleh penjual.</p>
+
+          <label for="customer-name">Nama pemesan</label>
+          <input id="customer-name" type="text" placeholder="Masukkan nama">
+
+          <label for="customer-address">Alamat pengiriman</label>
+          <textarea id="customer-address" rows="3" placeholder="Masukkan alamat pengiriman"></textarea>
+
+          <button class="btn btn-primary checkout-button" id="checkout-button">
+            Pesan via WhatsApp ↗
+          </button>
+          <p class="small-note">Pesanan belum dibayar sampai kamu menyepakatinya dengan penjual.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- TENTANG -->
+    <section class="about-section" id="tentang">
+      <div>
+        <span class="eyebrow">BUILT FOR YOUR NEXT LEVEL</span>
+        <h2>Temukan Performa.<br><span>Raih Kemenangan.</span></h2>
+      </div>
+      <p>
+        GameCore adalah konsep toko perlengkapan komputer dan gaming.
+        Pilih perangkat sesuai kebutuhan, bandingkan harga, dan hubungi
+        penjual untuk konfirmasi spesifikasi serta ketersediaan.
+      </p>
+      <a href="#produk" class="btn btn-primary">Temukan Produk ↗</a>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <a href="#home" class="logo"><span>GAME</span>CORE<span class="dot">.</span></a>
+    <p>© <span id="year"></span> GameCore. Website toko komputer dan gaming.</p>
+    <a href="#home">Kembali ke atas ↑</a>
+  </footer>
+
+  <script>
+    // DATA PRODUK
+    // Harga di bawah adalah contoh. Sesuaikan dengan harga toko kamu.
+    const products = [
+      {
+        id: 1, name: "PC Gaming Ryzen 5",
+        category: "PC Gaming", price: 8500000,
+        tag: "POPULAR", emoji: "🖥️",
+        image: "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=700&q=80",
+        description: "PC gaming untuk bermain dan multitasking."
+      },
+      {
+        id: 2, name: "Laptop Gaming RTX",
+        category: "Laptop Gaming", price: 14500000,
+        tag: "GAMING", emoji: "💻",
+        image: "https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&w=700&q=80",
+        description: "Laptop gaming untuk game dan produktivitas."
+      },
+      {
+        id: 3, name: "Prosesor AMD Ryzen 5",
+        category: "Komponen", price: 1850000,
+        tag: "CPU", emoji: "⚙️",
+        image: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&w=700&q=80",
+        description: "Prosesor untuk rakitan PC serbaguna."
+      },
+      {
+        id: 4, name: "VGA GeForce RTX",
+        category: "Komponen", price: 6500000,
+        tag: "GPU", emoji: "🎮",
+        image: "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=700&q=80",
+        description: "Kartu grafis untuk kebutuhan gaming."
+      },
+      {
+        id: 5, name: "RAM DDR4 16GB",
+        category: "Komponen", price: 550000,
+        tag: "MEMORY", emoji: "🧩",
+        image: "https://images.unsplash.com/photo-1562976540-1502c2145186?auto=format&fit=crop&w=700&q=80",
+        description: "Memori untuk meningkatkan kapasitas PC."
+      },
+      {
+        id: 6, name: "SSD NVMe 1TB",
+        category: "Komponen", price: 950000,
+        tag: "STORAGE", emoji: "💾",
+        image: "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?auto=format&fit=crop&w=700&q=80",
+        description: "Penyimpanan cepat untuk sistem dan game."
+      },
+      {
+        id: 7, name: "Monitor Gaming 24 Inch",
+        category: "Aksesoris", price: 1650000,
+        tag: "MONITOR", emoji: "🖥️",
+        image: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=700&q=80",
+        description: "Monitor untuk setup komputer gaming."
+      },
+      {
+        id: 8, name: "Keyboard Mechanical RGB",
+        category: "Aksesoris", price: 350000,
+        tag: "RGB", emoji: "⌨️",
+        image: "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?auto=format&fit=crop&w=700&q=80",
+        description: "Keyboard mekanis dengan pencahayaan RGB."
+      },
+      {
+        id: 9, name: "Mouse Gaming",
+        category: "Aksesoris", price: 175000,
+        tag: "GEAR", emoji: "🖱️",
+        image: "https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=700&q=80",
+        description: "Mouse untuk aktivitas gaming sehari-hari."
+      },
+      {
+        id: 10, name: "Headset Gaming",
+        category: "Aksesoris", price: 275000,
+        tag: "AUDIO", emoji: "🎧",
+        image: "https://images.unsplash.com/photo-1599669454699-248893623440?auto=format&fit=crop&w=700&q=80",
+        description: "Headset untuk komunikasi dan audio game."
+      },
+      {
+        id: 11, name: "PC Gaming RTX Premium",
+        category: "PC Gaming", price: 18500000,
+        tag: "PREMIUM", emoji: "🚀",
+        image: "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?auto=format&fit=crop&w=700&q=80",
+        description: "Pilihan PC gaming untuk performa lebih tinggi."
+      },
+      {
+        id: 12, name: "Laptop Gaming Performance",
+        category: "Laptop Gaming", price: 19900000,
+        tag: "PERFORMANCE", emoji: "💻",
+        image: "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=700&q=80",
+        description: "Laptop untuk gaming dan pekerjaan berat."
+      }
+    ];
+
+    // GANTI NOMOR INI DENGAN NOMOR WHATSAPP TOKO KAMU.
+    // Gunakan kode negara 62, tanpa tanda +, spasi, atau angka 0 di depan.
+    const WHATSAPP_NUMBER = "6281234567890";
+
+    let cart = {};
+
+    const productGrid = document.getElementById("product-grid");
+    const cartItems = document.getElementById("cart-items");
+    const searchInput = document.getElementById("search-input");
+    const categoryFilter = document.getElementById("category-filter");
+    const sortFilter = document.getElementById("sort-filter");
+
+    function rupiah(value) {
+      return new Intl.NumberFormat("id-ID", {
+        style: "currency",
+        currency: "IDR",
+        maximumFractionDigits: 0
+      }).format(value);
+    }
+
+    function renderProducts() {
+      const query = searchInput.value.trim().toLowerCase();
+      const category = categoryFilter.value;
+      let list = products.filter(product => {
+        const matchesSearch =
+          product.name.toLowerCase().includes(query) ||
+          product.category.toLowerCase().includes(query) ||
+          product.description.toLowerCase().includes(query);
+        const matchesCategory =
+          category === "Semua" || product.category === category;
+        return matchesSearch && matchesCategory;
+      });
+
+      if (sortFilter.value === "low") list.sort((a, b) => a.price - b.price);
+      if (sortFilter.value === "high") list.sort((a, b) => b.price - a.price);
+      if (sortFilter.value === "name") list.sort((a, b) => a.name.localeCompare(b.name));
+
+      productGrid.innerHTML = list.map(product => `
+        <article class="product-card">
+          <div class="product-image">
+            <img src="${product.image}" alt="${product.name}" loading="lazy"
+              onerror="this.style.display='none';this.parentElement.classList.add('image-fallback');">
+            <span class="product-tag">${product.tag}</span>
+          </div>
+          <div class="product-info">
+            <span class="product-category">${product.category}</span>
+            <h3>${product.name}</h3>
+            <p>${product.description}</p>
+            <div class="product-bottom">
+              <strong class="product-price">${rupiah(product.price)}</strong>
+              <button class="add-button" onclick="addToCart(${product.id})"
+                aria-label="Tambah ${product.name} ke keranjang">+</button>
+            </div>
+          </div>
+        </article>
+      `).join("");
+
+      document.getElementById("empty-message").hidden = list.length !== 0;
+    }
+
+    function addToCart(id) {
+      cart[id] = (cart[id] || 0) + 1;
+      renderCart();
+    }
+
+    function changeQty(id, amount) {
+      cart[id] = (cart[id] || 0) + amount;
+      if (cart[id] <= 0) delete cart[id];
+      renderCart();
+    }
+
+    function renderCart() {
+      const entries = Object.entries(cart);
+      const quantity = entries.reduce((sum, [, qty]) => sum + qty, 0);
+      const total = entries.reduce((sum, [id, qty]) => {
+        const product = products.find(item => item.id === Number(id));
+        return sum + product.price * qty;
+      }, 0);
+
+      document.getElementById("cart-count").textContent = quantity;
+      document.getElementById("summary-qty").textContent = quantity;
+      document.getElementById("summary-total").textContent = rupiah(total);
+
+      if (entries.length === 0) {
+        cartItems.innerHTML = '<p class="empty-cart">Keranjang masih kosong. Yuk, pilih produk gaming!</p>';
+        return;
+      }
+
+      cartItems.innerHTML = entries.map(([id, qty]) => {
+        const product = products.find(item => item.id === Number(id));
+        return `
+          <article class="cart-item">
+            <img src="${product.image}" alt="${product.name}">
+            <div class="cart-item-info">
+              <h4>${product.name}</h4>
+              <p>${rupiah(product.price)} / unit</p>
+              <strong>${rupiah(product.price * qty)}</strong>
+            </div>
+            <div class="quantity-control">
+              <button onclick="changeQty(${id}, -1)" aria-label="Kurangi jumlah">−</button>
+              <span>${qty}</span>
+              <button onclick="changeQty(${id}, 1)" aria-label="Tambah jumlah">+</button>
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    document.querySelectorAll(".category-card").forEach(button => {
+      button.addEventListener("click", () => {
+        categoryFilter.value = button.dataset.category;
+        renderProducts();
+        document.getElementById("produk").scrollIntoView({ behavior: "smooth" });
+      });
+    });
+
+    searchInput.addEventListener("input", renderProducts);
+    categoryFilter.addEventListener("change", renderProducts);
+    sortFilter.addEventListener("change", renderProducts);
+
+    document.getElementById("clear-cart").addEventListener("click", () => {
+      cart = {};
+      renderCart();
+    });
+
+    document.getElementById("checkout-button").addEventListener("click", () => {
+      const entries = Object.entries(cart);
+      const name = document.getElementById("customer-name").value.trim();
+      const address = document.getElementById("customer-address").value.trim();
+
+      if (entries.length === 0) {
+        alert("Keranjang masih kosong. Silakan pilih produk terlebih dahulu.");
+        return;
+      }
+      if (!name || !address) {
+        alert("Silakan isi nama dan alamat pengiriman terlebih dahulu.");
+        return;
+      }
+      if (!/^\d{9,15}$/.test(WHATSAPP_NUMBER)) {
+        alert("Nomor WhatsApp toko belum benar. Silakan periksa pengaturan nomor.");
+        return;
+      }
+
+      const quantity = entries.reduce((sum, [, qty]) => sum + qty, 0);
+      const total = entries.reduce((sum, [id, qty]) => {
+        return sum + products.find(p => p.id === Number(id)).price * qty;
+      }, 0);
+
+      const lines = entries.map(([id, qty]) => {
+        const p = products.find(item => item.id === Number(id));
+        return `- ${p.name} x${qty} = ${rupiah(p.price * qty)}`;
+      });
+
+      const message = [
+        "Halo GameCore, saya ingin memesan:",
+        "",
+        ...lines,
+        "",
+        `Jumlah barang: ${quantity}`,
+        `Subtotal: ${rupiah(total)}`,
+        `Nama: ${name}`,
+        `Alamat: ${address}`,
+        "",
+        "Mohon konfirmasi stok, spesifikasi, ongkir, dan total akhir. Terima kasih."
+      ].join("\n");
+
+      window.open(
+        "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message),
+        "_blank",
+        "noopener,noreferrer"
+      );
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    renderProducts();
+    renderCart();
+  </script>
+</body>
+</html>
+
